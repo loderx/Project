@@ -1,0 +1,366 @@
+:root {
+    color-scheme: light;
+    --bg: #f4f6fb;
+    --surface: #ffffff;
+    --surface-alt: #f0f3ff;
+    --text: #0e1432;
+    --muted: #667085;
+    --primary: #6f5cff;
+    --primary-dark: #5847d8;
+    --border: #e3e7f1;
+    --shadow: 0 20px 60px rgba(17, 24, 39, 0.12);
+}
+
+body.theme-dark {
+    color-scheme: dark;
+    --bg: #0b0f1e;
+    --surface: #12192f;
+    --surface-alt: #1a2240;
+    --text: #f5f6ff;
+    --muted: #8b94b5;
+    --primary: #9b87ff;
+    --primary-dark: #7d6cf7;
+    --border: #27305a;
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: var(--surface);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.brand-logo {
+    width: 56px;
+    height: 56px;
+}
+
+.brand-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-subtitle {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-link {
+    padding: 12px 16px;
+    border-radius: 14px;
+    color: var(--muted);
+    transition: all 0.2s ease;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    background: var(--surface-alt);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.user-mini {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.main {
+    flex: 1;
+    padding: 32px 40px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+}
+
+.topbar p {
+    color: var(--muted);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid transparent;
+}
+
+.card.large {
+    padding: 28px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.form input,
+.form select,
+.form textarea {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface-alt);
+    color: var(--text);
+}
+
+.button {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.button.primary {
+    background: var(--primary);
+    color: white;
+}
+
+.button.primary:hover {
+    background: var(--primary-dark);
+}
+
+.button.ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.alert.success {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.alert.error {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.table th,
+.table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.split {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.inline {
+    display: inline;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.module-meta {
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 12px 0;
+}
+
+.preview-logo {
+    max-width: 180px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 12px;
+    background: var(--surface-alt);
+}
+
+.login-page {
+    background: radial-gradient(circle at top, rgba(110, 92, 255, 0.2), transparent 50%), var(--bg);
+}
+
+.login-wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.login-card {
+    padding: 48px;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+
+.login-logo img {
+    width: 72px;
+}
+
+.login-subtitle {
+    color: var(--muted);
+}
+
+.login-panel {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.login-panel ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--muted);
+    list-style: none;
+}
+
+.install-page {
+    background: var(--bg);
+}
+
+.install-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.install-card {
+    background: var(--surface);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    max-width: 720px;
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.is-mobile .sidebar {
+    width: 210px;
+}
+
+@media (max-width: 960px) {
+    .app-shell {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .main {
+        padding: 24px;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+}

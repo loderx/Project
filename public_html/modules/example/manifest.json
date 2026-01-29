@@ -1,0 +1,8 @@
+{
+    "slug": "example",
+    "name": "Примерен модул",
+    "menu_label": "Пример",
+    "menu_path": "index.php?page=module&slug=example",
+    "description": "Демонстрация на модул с миграция.",
+    "version": "1.0"
+}
